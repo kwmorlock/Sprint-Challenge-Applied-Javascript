@@ -10,3 +10,8 @@
 // And add it to the DOM in the .header-container component
 
 function Header() {}
+
+const meowheader = document.createElement('div')
+const meowdate = document.createElement('span')
+const meowhone = document.createElement('h1')
+const meowtemp = document.createElement('span')
