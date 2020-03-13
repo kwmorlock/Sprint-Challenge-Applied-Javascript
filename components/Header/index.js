@@ -9,4 +9,28 @@
 //  </div >
 // And add it to the DOM in the .header-container component
 
-function Header() {}
+function Header() {
+
+const meowheader = document.createElement('div')
+const meowdate = document.createElement('span')
+const meowhone = document.createElement('h1')
+const meowtemp = document.createElement('span')
+
+meowheader.appendChild(meowdate);
+meowheader.appendChild(meowhone);
+meowheader.appendChild(meowtemp);
+
+meowheader.classList.add('header');
+meowheader.classList.add('date');
+meowheader.classList.add('temp');
+
+meowdate.textContent = 'Smarch 28, 2019';
+meowhone.textContent = 'Lambda Times';
+meowtemp.textContent = '98°';
+
+return meowheader;
+
+}
+
+const meowthing = document.querySelector('.header-container');
+meowthing.prepend(Header());
