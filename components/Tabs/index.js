@@ -7,3 +7,14 @@
 //
 //  The tab component should look like this:
 //    <div class="tab">topic here</div>
+
+const topicmeow =document.querySelector('.tabs')
+
+axios.get('https://lambda-times-backend.herokuapp.com/topics')
+  .then(response => {
+  console.log(response.data);
+topicmeow.appendChild( (response.data));
+ })
+  .catch(error => {
+  console.log("the data was not returned", error)
+})
