@@ -25,4 +25,26 @@ function createComponent(obj){
     const carddivfour = document.createElement('div');
     const cardimg = document.createElement('img');
     const cardspan = document.createElement('span');
+
+     carddivone.appendChild(carddivtwo);
+     carddivone.appendChild(carddivthree);
+     carddivthree.appendChild(carddivfour);
+     carddivthree.appendChild(cardspan);
+     //author name goes in div for author etc
+     carddivfour.appendChild(cardimg);
+     //img goes in image container
+
+     carddivone.classList.add('card');
+     carddivtwo.classList.add('headline');
+     carddivthree.classList.add('author');
+     carddivfour.classList.add('img-container');
+
+     carddivtwo.textContent = obj.carddivtwo;
+     cardspan.textContent = obj.cardspan;
+
+
+
+    return carddivone;
 }
+
+//use loop and .forEach?
