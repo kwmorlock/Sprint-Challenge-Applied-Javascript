@@ -26,6 +26,8 @@ function createComponent(obj){
     const cardimg = document.createElement('img');
     const cardspan = document.createElement('span');
 
+    const cards = document.querySelector('.cards-container')
+     cards.appendChild(carddivone);
      carddivone.appendChild(carddivtwo);
      carddivone.appendChild(carddivthree);
      carddivthree.appendChild(carddivfour);
@@ -38,13 +40,40 @@ function createComponent(obj){
      carddivtwo.classList.add('headline');
      carddivthree.classList.add('author');
      carddivfour.classList.add('img-container');
+    
 
-     carddivtwo.textContent = obj.carddivtwo;
-     cardspan.textContent = obj.cardspan;
-
+     carddivtwo.textContent = obj.headline;
+     cardspan.textContent = obj.authorName;
+     cardimg.src = obj.authorPhoto;
 
 
     return carddivone;
 }
 
 //use loop and .forEach?
+
+// const cards =document.querySelector('.cards-container')
+
+axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
+  .then(response => {
+  console.log(response.data);
+
+
+const meow = Object.keys(response.data.articles)
+for (let i = 0; i < meow.length; i++) {
+    const wow = meow[i];
+    response.data.articles[`${wow}`].forEach(event => {
+        createComponent(event)
+        console.log(event, "ughhhhhhh")
+    });
+}
+   console.log(meow)
+
+// axios.get(`https://lambda-times-backend.herokuapp.com/articles`)
+//   .then(response => {
+//   console.log(response.data);
+
+ })
+  .catch(error => {
+  console.log("the data was not returned", error)
+})
