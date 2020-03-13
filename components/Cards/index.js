@@ -17,3 +17,12 @@
 // </div>
 //
 // Create a card for each of the articles and add the card to the DOM.
+
+function createComponent(obj){
+    const carddivone = document.createElement('div');
+    const carddivtwo = document.createElement('div');
+    const carddivthree = document.createElement('div');
+    const carddivfour = document.createElement('div');
+    const cardimg = document.createElement('img');
+    const cardspan = document.createElement('span');
+}
